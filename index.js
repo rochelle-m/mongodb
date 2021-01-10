@@ -38,17 +38,34 @@ const updateBook = {
 
 // update a book
 
-Book.findById("5ffb4f7b47cda12934d85e49", function (err, book) {
-  book.author = updateBook.author;
-  book.name = updateBook.name;
-  book.price = updateBook.price;
+// Book.findById("5ffb4f7b47cda12934d85e49", function (err, book) {
+//   book.author = updateBook.author;
+//   book.name = updateBook.name;
+//   book.price = updateBook.price;
 
-  book
-    .save()
-    .then((book) => {
-      console.log("updated ", book);
-    })
-    .catch((err) => {
-      console.log("Update not possible", err);
-    });
+//   book
+//     .save()
+//     .then((book) => {
+//       console.log("updated ", book);
+//     })
+//     .catch((err) => {
+//       console.log("Update not possible", err);
+//     });
+// });
+
+// list all books
+
+// Book.find(function (err, books) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(books);
+//   }
+// });
+
+// find book by id
+
+let id = "5ffb4f7b47cda12934d85e49";
+Book.findById(id, function (err, book) {
+  console.log(book);
 });
