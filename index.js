@@ -13,9 +13,9 @@ mongoose.connection.on("open", () => {
 });
 
 const newBook = {
-  author: ["Abraham Silberschatz", "Henry F. Korth", "S. Sudarshan "],
-  name: "Database System Concept",
-  price: 1199,
+  author: ["Lewis Caroll"],
+  name: "Alice In Wonderland",
+  price: 1099,
 };
 
 // add a book
@@ -65,7 +65,13 @@ const updateBook = {
 
 // find book by id
 
-let id = "5ffb4f7b47cda12934d85e49";
-Book.findById(id, function (err, book) {
-  console.log(book);
+// let id = "5ffb4f7b47cda12934d85e49";
+// Book.findById(id, function (err, book) {
+//   console.log(book);
+// });
+
+// delete [where price is less than 1100]
+
+Book.remove({ price: { $lt: 1100 } }, (err, res) => {
+  console.log(err, res.deletedCount);
 });
